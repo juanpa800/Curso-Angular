@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MascotaComponent implements OnInit {
 
+  nombre = "Juan";
+  // especie = prompt("Especie"); 
+  especie = "Felino";
+  
+  raza = "León";
+  // raza = prompt("Raza de la mascota por favor");
+  private edad = 1;
+
+  getEdad(){
+    return this.edad;
+  }
+
   constructor() { }
 
   ngOnInit(): void {
