@@ -15,11 +15,33 @@ export class MascotaComponent implements OnInit {
   // raza = prompt("Raza de la mascota por favor");
   private edad = 1;
 
+  propertyhidden = true;
+
+  propertyVisibilidadInfo = false;
+
+  textoDePrueba = "En este momento el checkbox está en blanco";
+
   getEdad(){
     return this.edad;
   }
+
+  getEspecie(){
+    return this.especie;
+  }
   
   enviarDatos(value: String){
+  }
+
+  setVisibilidadInfo(){
+    this.propertyVisibilidadInfo = (this.propertyVisibilidadInfo == true? false : true);
+    this.propertyhidden = (this.propertyhidden == true? false : true);
+    this.mostrarVentana();
+  }
+
+  mostrarVentana(){
+    // alert("Event Binding")
+    this.textoDePrueba = (this.propertyVisibilidadInfo == true? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco");
+
   }
 
   constructor() { }

@@ -4,22 +4,26 @@
     ng g c &lt;nombre-componente&gt; fue exitosa
     <br>
     vamos a ver que hacemos con esto
-</p>
-
-<p>
+    <br>
     <b>A continuación texto creado con interpolación:</b>
 </p>
-<p>Nombre de la mascota {{ nombre }}</p>
 
+<p>Nombre de la mascota {{ nombre }}</p>
 
 <p>Especie de la mascota {{ especie.value}}</p>
 
-Introduce la especie: <input type="text" #especie>
-<br>
-<input type="submit" value="Enviar valores" (click)="enviarDatos(especie.value)">   
+Introduce la especie: <input type="text" #especie><br>
+<input type="submit" value="Enviar valores" (click)="enviarDatos(especie.value)">
 
 <p>Raza de la mascota {{ raza.value }}</p>
-Introduce la raza: <input type="text" #raza (keyup)="0">
+Introduce la raza: <input type="text" #raza (keyup)="0" [hidden]="propertyhidden">
+<br><br>
+
+{{textoDePrueba}}
+<br>
+Esconder Infomación: <input type="checkbox" [checked]="propertyVisibilidadInfo"
+    (click)="setVisibilidadInfo()">
+<br>
 
 <p>Edad de la mascota {{ getEdad() }}</p>
 
