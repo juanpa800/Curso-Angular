@@ -18,6 +18,9 @@ export class MascotaComponent implements OnInit {
   getEdad(){
     return this.edad;
   }
+  
+  enviarDatos(value: String){
+  }
 
   constructor() { }
 
