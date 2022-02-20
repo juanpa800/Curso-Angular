@@ -41,7 +41,7 @@ export class MascotaComponent implements OnInit {
     
     //COMENTADO PARA UTILIZAR EVENT BINDING 
     // this.propertyVisibilidadInfo = (this.propertyVisibilidadInfo == true? false : true);
-    this.propertyhidden = (this.propertyhidden == true? false : true);
+    this.propertyhidden = ((<HTMLInputElement>event.target).value == "si"? false : true);
 
     this.textoDePrueba = (<HTMLInputElement>event.target).value == "si"? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco";
     // this.mostrarVentana();
