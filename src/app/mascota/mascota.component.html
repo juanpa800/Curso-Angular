@@ -21,8 +21,13 @@ Introduce la raza: <input type="text" #raza (keyup)="0" [hidden]="propertyhidden
 
 {{textoDePrueba}}
 <br>
-Esconder Infomación: <input type="checkbox" [checked]="propertyVisibilidadInfo"
-    (click)="setVisibilidadInfo()">
+visualizar información: <input type="radio" value="si" name="selectores" id="selector" [checked]="propertyVisibilidadInfo"
+    (click)="setVisibilidadInfo($event)"><br>
+
+No visualiza información: <input type="radio" value="no" name="selectores" (click)="setVisibilidadInfo($event)"> 
+<!--[checked]="propertyVisibilidadInfo"
+   "-->
+
 <br>
 
 <p>Edad de la mascota {{ getEdad() }}</p>

@@ -32,17 +32,21 @@ export class MascotaComponent implements OnInit {
   enviarDatos(value: String){
   }
 
-  setVisibilidadInfo(){
-    this.propertyVisibilidadInfo = (this.propertyVisibilidadInfo == true? false : true);
+  setVisibilidadInfo(event :Event){
+    
+    //COMENTADO PARA UTILIZAR EVENT BINDING 
+    // this.propertyVisibilidadInfo = (this.propertyVisibilidadInfo == true? false : true);
     this.propertyhidden = (this.propertyhidden == true? false : true);
-    this.mostrarVentana();
+
+    this.textoDePrueba = (<HTMLInputElement>event.target).value == "si"? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco";
+    // this.mostrarVentana();
   }
 
-  mostrarVentana(){
-    // alert("Event Binding")
-    this.textoDePrueba = (this.propertyVisibilidadInfo == true? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco");
+  // mostrarVentana(){
+  //   // alert("Event Binding")
+  //   this.textoDePrueba = (this.propertyVisibilidadInfo == true? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco");
 
-  }
+  // }
 
   constructor() { }
 
