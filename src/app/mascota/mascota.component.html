@@ -1,35 +1,49 @@
-<p> mascota works!
-    <br>
-    si ves esto, significa que la creación de componenetes por CLI utilizando
-    ng g c &lt;nombre-componente&gt; fue exitosa
-    <br>
-    vamos a ver que hacemos con esto
-    <br>
-    <b>A continuación texto creado con interpolación:</b>
-</p>
+<!-- CREACIÓN DE COMPONENTES -->
+<hr>
+Componente mascota funcionando<br>
+Si ves esto, significa que la creación de componenetes por CLI utilizando
+ng g c &lt;nombre-componente&gt; fue exitosa<br>
+vamos a ver que hacemos con esto
+<br>
+<br>
+<hr>
+<br>
 
-<p>Nombre de la mascota {{ nombre }}</p>
 
-<p>Especie de la mascota {{ especie.value}}</p>
-
+<b>A continuación texto creado con interpolación:</b><br>
+Nombre de la mascota: {{ nombre }}<br>
+Especie de la mascota: {{ especie.value}}<br>
 Introduce la especie: <input type="text" #especie><br>
 <input type="submit" value="Enviar valores" (click)="enviarDatos(especie.value)">
 
-<p>Raza de la mascota {{ raza.value }}</p>
-Introduce la raza: <input type="text" #raza (keyup)="0" [hidden]="propertyhidden">
-<br><br>
+<br>
+<br>
+<br>
+<!-- PROPERTY BINDING -->
+<b>Uso de Property Binding:</b><br>
 
+Raza de la mascota {{ raza.value }}<br>
+Introduce la raza: <input type="text" #raza (keyup)="0" [hidden]="propertyhidden">
+<br>
+<br>
+<br>
+
+<!-- EVENT BINDING -->
+<b>Uso de Event Binding:</b><br>
 {{textoDePrueba}}
 <br>
-visualizar información: <input type="radio" value="si" name="selectores" id="selector" [checked]="propertyVisibilidadInfo"
-    (click)="setVisibilidadInfo($event)"><br>
-
-No visualiza información: <input type="radio" value="no" name="selectores" (click)="setVisibilidadInfo($event)"> 
-<!--[checked]="propertyVisibilidadInfo"
-   "-->
-
+visualizar información: <input type="radio" value="si" name="selectores" id="selector"
+    [checked]="propertyVisibilidadInfo" (click)="setVisibilidadInfo($event)"><br>
+No visualiza información: <input type="radio" value="no" name="selectores" checked="True" (click)="setVisibilidadInfo($event)">
 <br>
-
-<p>Edad de la mascota {{ getEdad() }}</p>
-
-<p>Etapa de vida del perro: {{getEdad()>=1?"Adulto":"Cachorro"}}</p>
+<br>
+Si edad mayor o igual a 5 se considera adulto<br>
+Edad de la mascota: <input type="number" (input)="setEdad($event)"><br>
+Etapa de vida del perro: {{getEdad()>=5?"Adulto":"Cachorro"}}
+<br>
+<br>
+<br>
+<!-- TWO WAY BINDING (using banana in box)-->
+<b>Uso de Two Way Binding:</b><br>
+Dueño: {{nombreDueno}}<br>
+Nombre del dueño: <input type="text" [(ngModel)]="nombreDueno">

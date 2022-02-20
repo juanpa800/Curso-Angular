@@ -15,6 +15,8 @@ export class MascotaComponent implements OnInit {
   // raza = prompt("Raza de la mascota por favor");
   private edad = 1;
 
+  nombreDueno = "Susana";
+
   propertyhidden = true;
 
   propertyVisibilidadInfo = false;
@@ -23,6 +25,9 @@ export class MascotaComponent implements OnInit {
 
   getEdad(){
     return this.edad;
+  }
+  setEdad(edadDada: Event){
+    this.edad = parseInt((<HTMLInputElement>edadDada.target).value);
   }
 
   getEspecie(){
@@ -45,8 +50,8 @@ export class MascotaComponent implements OnInit {
   // mostrarVentana(){
   //   // alert("Event Binding")
   //   this.textoDePrueba = (this.propertyVisibilidadInfo == true? "En este momento el checkbox está marcado :)" : "En este momento el checkbox está en blanco");
-
   // }
+
 
   constructor() { }
 
